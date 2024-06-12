@@ -1,6 +1,6 @@
 # VLPrompt: Vision-Language Prompting for Panoptic Scene Graph Generation
 
-Official code implementation of VLPrompt, [arXiv](https://arxiv.org/abs/2311.16492). Stay tuned.
+Official code implementation of VLPrompt, [arXiv](https://arxiv.org/abs/2311.16492).
 
 ## Abstract
 Panoptic Scene Graph Generation (PSG) aims at achieving a comprehensive image understanding by simultaneously segmenting objects and predicting relations among objects.
@@ -24,6 +24,36 @@ Comparison between our VLPrompt and other methods on the PSG dataset. Our method
 Visualization results of our VLPrompt.
 We show two examples.
 For each example, the top left displays the predicted segmentation results, the top right shows the top 10 predicted relation triplets (all are correct relation triplets), and bottom is the language snippet utilized for predicting the highlighted triplets in yellow.
+
+## How to train
+```
+PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
+python -m torch.distributed.launch \
+  --nproc_per_node=8 \
+  --master_port=27500 \
+  tools/train.py \
+  $CONFIG \
+  --auto-resume \
+  --no-validate \
+  --launcher pytorch
+```
+
+## How to test
+Execute the following command, and you will get a submission file that can be used to evaluate the model.
+```
+PYTHONPATH=".":$PYTHONPATH \
+python tools/infer.py \
+  $EXP_TAG \
+  $EPOCH_NUM
+```
+
+## How to evaluate
+Please install [HiLo](https://github.com/franciszzj/HiLo).
+```
+cd ${HiLo_ROOT}
+# SUBMISSION_PATH looks like "work_dirs/kings_sgg_v1_1/epoch_12_results/submission/"
+python tools/grade.py $SUBMISSION_PATH
+```
 
 ## Citation
 ```
