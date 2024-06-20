@@ -55,6 +55,9 @@ cd ${HiLo_ROOT}
 python tools/grade.py $SUBMISSION_PATH
 ```
 
+## Resource
+Json used to train and test our method: [psg_train.json](https://emckclac-my.sharepoint.com/:u:/g/personal/k21163430_kcl_ac_uk/EUDvXDxSEexJnkBfy_1yr34BvJfimWQTUfOKEMTPwxyF0w?e=7tbF1R) and [psg_val.json](https://emckclac-my.sharepoint.com/:u:/g/personal/k21163430_kcl_ac_uk/Ecau5X4R8ylHsGc543BuqJsBggqhN8l3pLXT3-5TlVvzDg?e=5t1xVW).
+
 ## Citation
 ```
 @article{zhou2023vlprompt,
