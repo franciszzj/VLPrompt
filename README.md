@@ -12,11 +12,11 @@ Then, through a prompter network based on attention mechanism, it achieves preci
 Our extensive experiments show that VLPrompt significantly outperforms previous state-of-the-art methods on the PSG dataset, proving the effectiveness of incorporating language information and alleviating the long-tail problem of relations.
 
 ## Method
-![hilo_overview](assets/method.png)
+![vlprompt_overview](assets/method.png)
 The overall framework of our VLPrompt method, which comprises three components: the vision feature extractor, the language feature extractor and the vision-language prompter.
 
 ## Results
-![hilo_results](assets/results.png)
+![vlprompt_results](assets/results.png)
 Comparison between our VLPrompt and other methods on the PSG dataset. Our method shows superior performance compared to all previous methods.
 
 ## Visualization
